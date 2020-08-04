@@ -22,3 +22,9 @@
 
 
 ## Testing python3
+
+2. pip install test
+- pip install pip-install-test
+- import pip_install_test
+
+
