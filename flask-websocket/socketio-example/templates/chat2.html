@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Room</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var oSocket = new WebSocket("ws://localhost:3000/");
+
+    oSocket.onopen = function (e) {
+        console.log("open");
+    };
+
+    oSocket.onmessage = function (e) {
+        console.log("onmessage");
+        console.log(e.data);
+    };
+
+    oSocket.onclose = function (e) {
+        console.log("close");
+    };
+
+    oSocket.send("message");
+    oSocket.close();
+</script>
+<ul id="messages"></ul>
+<input type="text" id="myMessage">
+<button id="sendbutton">Send</button>
+
+</body>
+</html>
